@@ -1,0 +1,31 @@
+---
+import ProjectCard from "../components/ProjectCard.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const projects = [
+  {
+    title: "My First Project",
+    description: "A short description of what this project does.",
+    link: "https://github.com/yourusername"
+  },
+  {
+    title: "My Second Project",
+    description: "Another project description goes here.",
+    link: "https://github.com/yourusername"
+  }
+];
+---
+
+<BaseLayout title="Projects | Julian Herbst">
+  <a href="/">← Back</a>
+
+  <h2>Projects</h2>
+
+  {projects.map((project) => (
+    <ProjectCard
+      title={project.title}
+      description={project.description}
+      link={project.link}
+    />
+  ))}
+</BaseLayout>
